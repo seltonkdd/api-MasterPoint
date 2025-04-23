@@ -13,14 +13,11 @@ class CustomUser(AbstractUser):
         verbose_name = 'Usuário'
         verbose_name_plural = 'Usuários'
 
-    def __str__(self):
-        return self.email
-
 
 class Employee(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.PROTECT, verbose_name='Usuário', null=False)
-    name = models.CharField(max_length=100, blank=True, null=True, verbose_name='Nome')
-    cpf = models.CharField(max_length=15, blank=True, null=True, verbose_name='CPF')
+    user = models.OneToOneField(CustomUser, on_delete=models.PROTECT, verbose_name='Usuário', null=True, blank=True)
+    name = models.CharField(max_length=100, verbose_name='Nome', null=False)
+    cpf = models.CharField(max_length=15, blank=True, null=True, verbose_name='CPF', unique=True)
     phone = models.CharField(max_length=15, blank=True, null=True, verbose_name='Número de celular')
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -31,4 +28,4 @@ class Employee(models.Model):
         verbose_name_plural = 'Funcionários'
 
     def __str__(self):
-        return self.user.email
+        return self.name
