@@ -4,8 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
     email = models.EmailField(max_length=100, unique=True, verbose_name='Endereço de email')
-    is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False, verbose_name='É admin')
+    is_active = models.BooleanField(default=True, verbose_name='É ativo')
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
@@ -18,7 +18,7 @@ class CustomUser(AbstractUser):
 
 
 class Employee(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.PROTECT)
+    user = models.OneToOneField(CustomUser, on_delete=models.PROTECT, verbose_name='Usuário', null=False)
     name = models.CharField(max_length=100, blank=True, null=True, verbose_name='Nome')
     cpf = models.CharField(max_length=15, blank=True, null=True, verbose_name='CPF')
     phone = models.CharField(max_length=15, blank=True, null=True, verbose_name='Número de celular')
@@ -31,4 +31,4 @@ class Employee(models.Model):
         verbose_name_plural = 'Funcionários'
 
     def __str__(self):
-        return self.user
+        return self.user.email
