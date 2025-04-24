@@ -10,6 +10,6 @@ class EmployeeViewSet(ModelViewSet):
     queryset = Employee.objects.all()
 
     permission_classes = [
-        DjangoModelPermissions, 
+        DjangoModelPermissions,
         IsAdminUser
     ]

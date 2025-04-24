@@ -16,7 +16,7 @@ class ClockSerializer(serializers.ModelSerializer):
             employee = Employee.objects.get(user=request.user)
         except Employee.DoesNotExist:
             raise serializers.ValidationError('Funcionário não encontrado para o usuário logado.')
-        
+
         validated_data['employee'] = employee
 
         return super().create(validated_data)

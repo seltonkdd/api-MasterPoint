@@ -13,4 +13,3 @@ class Clock(models.Model):
 
     def __str__(self):
         return f'{self.punch} - {self.employee}'
-
