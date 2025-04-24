@@ -22,5 +22,5 @@ class CustomUserAdmin(UserAdmin):
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ['name',]
+    list_display = ['name', 'created_at', 'updated_at']
     search_fields = ['name']
