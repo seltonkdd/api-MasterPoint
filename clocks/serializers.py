@@ -5,9 +5,11 @@ from employees.models import Employee
 
 
 class ClockSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(source='employee.user.email', read_only=True)
+
     class Meta:
         model = Clock
-        fields = '__all__'
+        fields = ['id', 'punch', 'employee', 'email']
         read_only_fields = ['employee']
 
     def create(self, validated_data):

@@ -18,5 +18,5 @@ class ClockViewSet(ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         if user.is_staff:
-            return Clock.objects.all()
-        return Clock.objects.filter(employee__user=user)
+            return Clock.objects.all().order_by('-id')
+        return Clock.objects.filter(employee__user=user).order_by('-id')
