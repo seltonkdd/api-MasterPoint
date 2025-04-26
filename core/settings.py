@@ -21,7 +21,7 @@ SECRET_KEY = 'django-insecure-mbk)cg0gzy5$$vj9z^2swt)vk_z*haue*ixicr26q*a#8ds%cq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.0.0.8', 'localhost']
 
 
 # Application definition
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'masterpoint_service',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'masterpoint_db',
+        'PORT': '5432'
     }
 }
 
