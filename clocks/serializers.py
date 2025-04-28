@@ -9,7 +9,7 @@ class ClockSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Clock
-        fields = ['id', 'punch', 'employee', 'email']
+        fields = ['id', 'punch', 'latitude', 'longitude', 'employee', 'email']
         read_only_fields = ['employee']
 
     def create(self, validated_data):

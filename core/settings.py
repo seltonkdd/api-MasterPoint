@@ -4,7 +4,7 @@ import environ
 
 
 env = environ.Env()
-env.read_env()
+env.read_env(env_file='.env')
 
 MAPS_API_KEY = env('MAPS_API')
 
@@ -21,7 +21,7 @@ SECRET_KEY = 'django-insecure-mbk)cg0gzy5$$vj9z^2swt)vk_z*haue*ixicr26q*a#8ds%cq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.0.0.8', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
