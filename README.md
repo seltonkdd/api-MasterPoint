@@ -13,7 +13,7 @@ Frontend: (https://github.com/seltonkdd/MasterPoint-app)
 - API REST para consumo do aplicativo mobile MasterPoint
 - Uso de API externa do Google Maps
 - Cada ponto guarda a ultima localização de quem registrou.
-- Conteinerização com Docker
+- Conteinerização com Docker e PostgresSQL
   
 # Uso
 
@@ -113,3 +113,7 @@ Em `.env` coloque sua chave de api do google maps
     GET /get_maps_image/{latitude}/{longitude}/
 
 Retorna uma imagem de GPS da localização fornecida, essa rota é requisitada pelo frontend.
+
+# Screenshots
+![Captura de Tela (11)](https://github.com/user-attachments/assets/69f11a13-26af-499b-b341-f3fa6c5eafcb)
+
