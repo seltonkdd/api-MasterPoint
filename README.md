@@ -54,7 +54,7 @@ Retorna um JSON com token `refresh` e `access`
 
 | Body   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| `access` | `string` | **Obrigatório**. Token `refresh`|
+| `refresh` | `string` | **Obrigatório**. Token `refresh`|
 
 Retorna um novo token válido
 
