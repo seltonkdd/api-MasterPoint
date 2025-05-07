@@ -13,7 +13,7 @@ Frontend: (https://github.com/seltonkdd/MasterPoint-app)
 - API REST para consumo do aplicativo mobile MasterPoint
 - Uso de API externa do Google Maps
 - Cada ponto guarda a ultima localização de quem registrou.
-- Conteinerização com Docker e PostgresSQL
+- Conteinerização com Docker e PostgreSQL
   
 # Uso
 
@@ -27,7 +27,7 @@ Entre no diretório do projeto
 #### Para rodar localmente com Docker, necessário ter o Docker e o Docker Compose
     docker-compose up --build
 
-Você deve criar um superusuário `python manage.py createsuperuser` no container da sua aplicação para poder entrar no Admin do DJango
+Você deve criar um superusuário `python manage.py createsuperuser` no container da sua aplicação para poder entrar no Admin do Django
 
 Acesse `localhost:8000/`
 
